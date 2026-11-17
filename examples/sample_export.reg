@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DemoSvc]
+"ImagePath"="C:\\Windows\\System32\\demosvc.exe"
+"Start"=dword:00000002
+"Type"=dword:00000010
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"Updater"="C:\\Tools\\updater.exe"

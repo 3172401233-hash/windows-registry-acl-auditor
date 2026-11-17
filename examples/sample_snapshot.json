@@ -1,0 +1,160 @@
+{
+  "accounts": {
+    "protected_sids": [
+      "S-1-5-18",
+      "S-1-5-19",
+      "S-1-5-20",
+      "S-1-5-32-544",
+      "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464"
+    ],
+    "sid_to_name": {
+      "S-1-5-21-1111-2222-3333-1001": "DOMAIN\\alice",
+      "S-1-5-32-545": "BUILTIN\\Users",
+      "S-1-5-11": "Authenticated Users",
+      "S-1-5-18": "NT AUTHORITY\\SYSTEM",
+      "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464": "NT SERVICE\\TrustedInstaller"
+    }
+  },
+  "token": {
+    "sids": [
+      "S-1-5-21-1111-2222-3333-1001",
+      "S-1-5-32-545",
+      "S-1-5-11",
+      "S-1-5-4",
+      "S-1-1-0"
+    ]
+  },
+  "keys": {
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services": {
+      "security": {
+        "owner": "S-1-5-18",
+        "control": "P",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS", "flags": "CI|OI"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_READ", "flags": "CI|OI"},
+          {"sid": "S-1-5-32-544", "mask": "KEY_ALL_ACCESS", "flags": "CI|OI"}
+        ]
+      }
+    },
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VulnSvc": {
+      "values": {
+        "ImagePath": "C:\\Windows\\System32\\vulnsvc.exe",
+        "Start": 2,
+        "Type": 16
+      },
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_WRITE"}
+        ]
+      }
+    },
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services\\LockedSvc": {
+      "values": {"ImagePath": "C:\\Windows\\System32\\locked.exe"},
+      "security": {
+        "owner": "S-1-5-18",
+        "control": "P",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_READ"},
+          {"sid": "S-1-5-32-545", "type": "deny", "mask": "KEY_SET_VALUE|DELETE|WRITE_DAC|WRITE_OWNER|KEY_CREATE_SUB_KEY"}
+        ]
+      }
+    },
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services\\TrustedSvc": {
+      "values": {"ImagePath": "C:\\Windows\\System32\\trusted.exe"},
+      "security": {
+        "owner": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464",
+        "control": "P",
+        "dacl": [
+          {"sid": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_READ"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run": {
+      "values": {"Updater": "C:\\Tools\\updater.exe"},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_SET_VALUE|KEY_CREATE_SUB_KEY"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\Classes\\.demo": {
+      "values": {"": "demoFile"},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_SET_VALUE"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\Classes\\demoFile\\shell\\open\\command": {
+      "values": {"": "\"C:\\Program Files\\demo.exe\" \"%1\""},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_SET_VALUE"}
+        ]
+      }
+    },
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services\\InheritedGroup": {
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS", "flags": "CI|OI"},
+          {"sid": "S-1-5-11", "mask": "KEY_WRITE", "flags": "CI|OI"}
+        ]
+      }
+    },
+    "HKLM\\SYSTEM\\CurrentControlSet\\Services\\InheritedGroup\\InheritedSvc": {
+      "values": {"ImagePath": "C:\\Apps\\inherited.exe"},
+      "security": {"owner": "S-1-5-18", "dacl": []}
+    },
+    "HKLM\\SOFTWARE\\Policies\\VendorApp": {
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS", "flags": "CI|OI"},
+          {"sid": "S-1-5-11", "mask": "KEY_WRITE", "flags": "CI|OI"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\Vendor32\\Runner": {
+      "values": {"Command": "C:\\Apps32\\runner.exe"},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_READ"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\WOW6432Node\\Vendor32\\Runner": {
+      "values": {"Command": "C:\\Apps32\\runner.exe"},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_SET_VALUE|KEY_CREATE_SUB_KEY"}
+        ]
+      }
+    },
+    "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run": {
+      "values": {"LegacyHelper": "C:\\Apps32\\helper.exe"},
+      "security": {
+        "owner": "S-1-5-18",
+        "dacl": [
+          {"sid": "S-1-5-18", "mask": "KEY_ALL_ACCESS"},
+          {"sid": "S-1-5-32-545", "mask": "KEY_SET_VALUE|KEY_CREATE_SUB_KEY"}
+        ]
+      }
+    }
+  }
+}
